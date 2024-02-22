@@ -4,6 +4,8 @@ const cookieParser = require('cookie-parser');
 const { requireAuth } = require('./middleware/authmiddleware');
 const authRoutes = require('./routes/authRoutes');
 const categoriesRouter = require('./routes/categryRoutes');
+const expensesRouter = require('./routes/expensesRoutes');
+
 
 // Middleware to set CORS headers
 app.use((req, res, next) => {
@@ -20,7 +22,7 @@ app.use(cookieParser());
 // routes
 app.use('/users', authRoutes);
 app.use('/categories', categoriesRouter);
-
+app.use('/expenses', expensesRouter);
 
 
 module.exports = app;
