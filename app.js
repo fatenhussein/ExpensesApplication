@@ -3,7 +3,9 @@ const app = express();
 const cookieParser = require('cookie-parser');
 // const swaggerJSDoc = require('swagger-jsdoc');
 // const swaggerUi = require('swagger-ui-express');
+const { requireAuth } = require('./middleware/authmiddleware');
 const authRoutes = require('./routes/authRoutes');
+const categoriesRouter = require('./routes/categryRoutes');
 
 // Middleware to set CORS headers
 app.use((req, res, next) => {
@@ -19,5 +21,8 @@ app.use(cookieParser());
 
 // routes
 app.use('/users', authRoutes);
+app.use('/categories', categoriesRouter);
+
+
 
 module.exports = app;
