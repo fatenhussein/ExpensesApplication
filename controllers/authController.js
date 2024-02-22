@@ -58,8 +58,33 @@ exports.createuser = async (req, res) => {
   }
 };
 
+
+
 //login user:
-exports.login = async (req, res) => ({});
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.login(email, password);
+
+    const token = createToken(user._id);
+
+    // to send the token to the browser throu the cookie
+    res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
+
+    res.status(200).json({
+      status: 'success',
+      token,
+      id: user._id,
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err.message,
+    });
+  }
+};
+
+
 
 //logout
 exports.logout = async (req, res) => ({});
