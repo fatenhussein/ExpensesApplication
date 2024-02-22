@@ -85,6 +85,11 @@ exports.login = async (req, res) => {
 };
 
 
-
 //logout
-exports.logout = async (req, res) => ({});
+exports.logout = async (req, res) => {
+  //remove the cookie from the browser so the user is logged out
+  res.cookie('jwt', '' , {maxAge:1});
+};
+
+
+
