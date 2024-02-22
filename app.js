@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
-// const swaggerJSDoc = require('swagger-jsdoc');
-// const swaggerUi = require('swagger-ui-express');
 const { requireAuth } = require('./middleware/authmiddleware');
 const authRoutes = require('./routes/authRoutes');
 const categoriesRouter = require('./routes/categryRoutes');
