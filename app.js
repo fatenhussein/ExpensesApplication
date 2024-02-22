@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const authRoutes = require('./routes/authRoutes');
+
+
 // Middleware to set CORS headers
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -12,5 +15,10 @@ app.use((req, res, next) => {
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+
+
+
+// routes
+app.use('/users', authRoutes);
 
 module.exports = app;
