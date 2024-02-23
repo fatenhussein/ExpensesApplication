@@ -1,4 +1,3 @@
-# Use the official Node.js image as base
 FROM node:16
 
 # Set the working directory in the container
@@ -9,6 +8,7 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
+
 
 # Copy the rest of the application code
 COPY . .
