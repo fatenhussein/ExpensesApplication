@@ -124,4 +124,9 @@ const setupSwagger = (app) => {
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 };
 
+
+//the url for Swagger docs
+//http://localhost:9000/api-docs/  
+
+
 module.exports = setupSwagger;
