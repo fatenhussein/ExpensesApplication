@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mongo_db:
+    image: mongo:latest
+    volumes:
+      - mongo_db:/data/db
+
+  app:
+    build: .
+    ports:
+      - "9000:3000"
+    environment:
+      - APP_NAME=ExpensesApp
+      - DATABASE_URL=mongodb+srv://fatenaalhussein:iq01y8iQLI4ldF6v@cluster0.wejqgds.mongodb.net/?retryWrites=true&w=majority
+      - PASSWORD=iq01y8iQLI4ldF6v
+      - PORT=9000
+      - JWT_SECRET=faten
+
+volumes:
+  mongo_db:
