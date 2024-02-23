@@ -25,4 +25,8 @@ app.use('/categories', categoriesRouter);
 app.use('/expenses', expensesRouter);
 
 
+
+// Set up Swagger documentation
+setupSwagger(app);
+
 module.exports = app;
