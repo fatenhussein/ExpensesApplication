@@ -28,8 +28,14 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-});
 
+  expenses: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Expense',
+    },
+  ],
+});
 
 //this is for hashing the password before it saved in the db
 userSchema.pre('save', async function (next) {
@@ -39,9 +45,6 @@ userSchema.pre('save', async function (next) {
 
   next();
 });
-
-
-
 
 // static method to login the user
 userSchema.statics.login = async function (email, password) {
@@ -59,7 +62,6 @@ userSchema.statics.login = async function (email, password) {
 
   throw Error('incorrect email');
 };
-
 
 const User = mongoose.model('User', userSchema);
 
