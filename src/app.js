@@ -5,7 +5,7 @@ const authRoutes = require('./routes/authRoutes');
 const categoriesRouter = require('./routes/categryRoutes');
 const expensesRouter = require('./routes/expensesRoutes');
 const { requireAuth } = require('./middleware/authmiddleware');
-const setupSwagger = require('./utils/swagger'); 
+const setupSwagger = require('../utils/swagger'); 
 
 // Middleware to set CORS headers
 app.use((req, res, next) => {

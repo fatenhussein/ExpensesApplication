@@ -113,7 +113,7 @@ const options = {
     },
   },
   // Path to the APIs you want to document
-  apis: ['./routes/*.js'], // Path to the API routes
+  apis: ['./src/routes/*.js'], // Path to the API routes
 };
 
 // Initialize Swagger-jsdoc
