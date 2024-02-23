@@ -9,7 +9,7 @@ services:
   app:
     build: .
     ports:
-      - "9001:3000"  # Map port 3000 inside the container to port 9000 on the host machine
+      - "9000:9000"  # Map port 3000 inside the container to port 9000 on the host machine
     environment:
       - APP_NAME=ExpensesApp
       - DATABASE_URL=mongodb+srv://fatenaalhussein:iq01y8iQLI4ldF6v@cluster0.wejqgds.mongodb.net/?retryWrites=true&w=majority
