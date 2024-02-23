@@ -55,9 +55,62 @@ const options = {
           },
           required: ['userName', 'email', 'password'],
         },
+
+        Category: {
+          type: 'object',
+          properties: {
+            name: {
+              type: 'string',
+              description: 'The name of the category.',
+            },
+            description: {
+              type: 'string',
+              description: 'Description of the category.',
+            },
+            createdAt: {
+              type: 'string',
+              format: 'date-time',
+              description: 'The date and time when the category was created.',
+            },
+            updatedAt: {
+              type: 'string',
+              format: 'date-time',
+              description:
+                'The date and time when the category was last updated.',
+            },
+          },
+          required: ['name'],
+        },
+
+        Expense: {
+          type: 'object',
+          properties: {
+            userId: {
+              type: 'string',
+              description: 'The ID of the user who created the expense.',
+            },
+            categoryId: {
+              type: 'string',
+              description:
+                'The ID of the category to which the expense belongs.',
+            },
+            amount: {
+              type: 'number',
+              description: 'The amount of the expense.',
+            },
+            date: {
+              type: 'string',
+              description: 'The date of the expense.',
+            },
+            description: {
+              type: 'string',
+              description: 'Optional description of the expense.',
+            },
+          },
+          required: ['userId', 'categoryId', 'amount', 'date'],
+        },
       },
     },
-    
   },
   // Path to the APIs you want to document
   apis: ['./routes/*.js'], // Path to the API routes
