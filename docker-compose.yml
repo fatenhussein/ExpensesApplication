@@ -10,12 +10,8 @@ services:
     build: .
     ports:
       - "9000:9000"  # Map port 3000 inside the container to port 9000 on the host machine
-    environment:
-      - APP_NAME=ExpensesApp
-      - DATABASE_URL=mongodb+srv://fatenaalhussein:iq01y8iQLI4ldF6v@cluster0.wejqgds.mongodb.net/?retryWrites=true&w=majority
-      - PASSWORD=iq01y8iQLI4ldF6v
-      - PORT=3000     # Set the application's port to 3000
-      - JWT_SECRET=faten
-
+   
+    env_file:
+      - config.env
 volumes:
   mongo_db:
