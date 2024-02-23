@@ -90,3 +90,29 @@ exports.deleteExpense = async (req, res) => {
     });
   }
 };
+
+// get all the expeneses list by specific date
+exports.getExpensesListByDate = async (req, res) => {
+  const { year, month, day } = req.params;
+  const startDate = new Date(year, month - 1, day);
+  const endDate = new Date(year, month - 1, parseInt(day) + 1); // Convert day to number
+
+  try {
+    const expenses = await Expense.find({
+      date: { $gte: startDate, $lt: endDate },
+    });
+
+    res.status(200).json({
+      status: 'success',
+      result: expenses.length,
+      data: {
+        expenses,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err.message,
+    });
+  }
+};
