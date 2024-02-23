@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
 const { requireAuth } = require('./middleware/authmiddleware');
+
+const setupSwagger = require('./utils/swagger');
 const authRoutes = require('./routes/authRoutes');
 const categoriesRouter = require('./routes/categryRoutes');
 const expensesRouter = require('./routes/expensesRoutes');
