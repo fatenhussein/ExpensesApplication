@@ -44,14 +44,7 @@ const options = {
               format: 'date-time',
               description: 'The date and time when the user was last updated.',
             },
-            expenses: {
-              type: 'array',
-              items: {
-                type: 'string',
-                description: 'The ID of an expense associated with the user.',
-              },
-              description: 'An array of expense IDs associated with the user.',
-            },
+            
           },
           required: ['userName', 'email', 'password'],
         },

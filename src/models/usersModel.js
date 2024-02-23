@@ -28,13 +28,6 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-
-  expenses: [
-    {
-      type: mongoose.Schema.Types.ObjectId, //ican use the populate then if i want to retireve users with there expenses 
-      ref: 'Expense',
-    },
-  ],
 });
 
 //this is for hashing the password before it saved in the db
