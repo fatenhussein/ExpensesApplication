@@ -1,6 +1,9 @@
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
+///Swagger link
+//http://localhost:9000/api-docs/#/
+//
 // Swagger options
 const options = {
   // Define the Swagger definition
