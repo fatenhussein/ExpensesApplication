@@ -1,13 +1,11 @@
 const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
-const { requireAuth } = require('./middleware/authmiddleware');
-
-const setupSwagger = require('./utils/swagger');
 const authRoutes = require('./routes/authRoutes');
 const categoriesRouter = require('./routes/categryRoutes');
 const expensesRouter = require('./routes/expensesRoutes');
-
+const { requireAuth } = require('./middleware/authmiddleware');
+const setupSwagger = require('./utils/swagger'); 
 
 // Middleware to set CORS headers
 app.use((req, res, next) => {
@@ -23,9 +21,14 @@ app.use(cookieParser());
 
 // routes
 app.use('/users', authRoutes);
+
+
+// middleware to check authentication for protected routes
+app.use(requireAuth);
+
+// routes accessible only to logged-in users
 app.use('/categories', categoriesRouter);
 app.use('/expenses', expensesRouter);
-
 
 
 // Set up Swagger documentation
