@@ -15,6 +15,7 @@ const expenseSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  // i could use the created at but what if the user want to enter an  old expens 
   date: {
     type: Date,
     required: true,
