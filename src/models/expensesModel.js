@@ -19,9 +19,7 @@ const expenseSchema = new mongoose.Schema({
   date: {
     type: Date,
     required: true,
-    get: function(value) {
-      return value.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' });
-    }
+    
   },
   description: String,
 });
