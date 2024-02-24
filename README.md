@@ -5,7 +5,7 @@ This guide will walk you through the installation process for ExpenseApp.
 
 ## Prerequisites
 - Node.js and npm installed on your system
-- Docker installed (optional, for Dockerized deployment)
+- Docker installed (for Dockerized deployment)
 
 ## Installation Steps
 
@@ -14,11 +14,11 @@ This guide will walk you through the installation process for ExpenseApp.
    git clone <repository_url>
    cd ExpenseApp
 
-1. Install Node modules
+2. Install Node modules
 npm install
 
 
-2. Configure Environment Variables
+3. Configure Environment Variables
 Create a new file named config.env in the root directory.
 Copy the content from config.env.example into config.env.
 Modify the values in config.env as per your configuration.
@@ -35,7 +35,8 @@ PASSWORD=your_database_password_here
 PORT=9000
 # JWT Secret key for authentication
 JWT_SECRET=your_jwt_secret_key_here
-Start the Application
+
+# Start the Application
 npm start
 
 # Dockerized Deployment 
