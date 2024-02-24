@@ -1,23 +1,4 @@
-# ExpenseApp Installation Guide
 
-This guide will walk you through the installation process for ExpenseApp.
-
-## Prerequisites
-- Node.js and npm installed on your system
-- Docker installed (optional, for Dockerized deployment)
-
-## Installation Steps
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository_url>
-   cd ExpenseApp
-
-
-Certainly! Here's the README.md content with all the steps and an additional note about using MongoDB cloud:
-
-markdown
-Copy code
 # ExpenseApp Installation Guide
 
 This guide will walk you through the installation process for ExpenseApp.
@@ -56,7 +37,6 @@ PORT=9000
 JWT_SECRET=your_jwt_secret_key_here
 Start the Application
 npm start
-
 
 Dockerized Deployment (Optional)
 If you prefer Dockerized deployment, follow these additional steps:
