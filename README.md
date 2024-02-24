@@ -49,3 +49,6 @@ docker build -t expenseapp .
 2. Run Docker Compose
 
 docker-compose up
+
+# the url for Swagger docs
+http://localhost:9000/api-docs/  
