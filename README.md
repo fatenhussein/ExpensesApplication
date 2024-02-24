@@ -38,7 +38,7 @@ JWT_SECRET=your_jwt_secret_key_here
 Start the Application
 npm start
 
-Dockerized Deployment (Optional)
+# Dockerized Deployment 
 If you prefer Dockerized deployment, follow these additional steps:
 
 1. Build Docker image
