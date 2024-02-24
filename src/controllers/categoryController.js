@@ -38,7 +38,7 @@ exports.createCategory = async (req, res) => {
   }
 };
 
-//Get category:
+//Get one  category:
 exports.getCategory = async (req, res) => {
   try {
     const category  = await Category.findById(req.params.id);
@@ -54,7 +54,7 @@ exports.getCategory = async (req, res) => {
   }
 };
 
-//Updatecategory:
+//Update category:
 exports.updateCategory = async (req, res) => {
   try {
     //By default, findOneAndUpdate() returns the document as it was before update was applied.
