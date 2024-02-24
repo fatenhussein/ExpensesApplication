@@ -102,6 +102,7 @@ exports.getExpensesListByDate = async (req, res) => {
       date: { $gte: startDate, $lt: endDate },
     });
 
+    // if there is no expenses in theat specific date
     if (expenses.length === 0) {
       return res.status(200).json({
         status: 'success',
